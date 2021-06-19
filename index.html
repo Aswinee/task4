@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Information</title>
+    <style></style>
+    <link rel="stylesheet" href="style4.css">
+
+</head>
+<body>
+    <script src="script4.js"></script>
+    <h2>User information </h2>
+    <form class="form" action="" method="get">
+      <label class="required" for="name">Enter your name</label>
+      <div class="name">
+        <input type="text" name="name" placeholder="First name" class="firstName" required>
+        <input type="text" name="name" placeholder="Last name" class="lastName" required>
+      </div>
+      &nbsp;
+      <div>
+        <label class="required address" for="Address">Enter your Address</label>
+        <input type="text" name="Address" class="addr" required>
+      </div>
+      &nbsp;
+      <div>
+        <label class="required" for="Pincode">Enter your Pincode</label>
+        <input id="zip" name="zip" type="text" pattern="[0-9]*" maxlength='6' required>
+      </div>
+      <p class="required">Choose gender</p>
+      <div class="gender">
+        <div>
+          <input type="radio" id="Female" name="gender" value="female" required>
+          <label for="Female">Female</label>
+        </div>
+        <div>
+          <input type="radio" id="Male" name="gender" value="Male" required>
+          <label for="Male">Male</label>
+        </div>
+        <div>
+          <input type="radio" id="Others" name="gender" value="Others" required>
+          <label for="Others">Others</label>
+        </div>
+    
+      </div>
+    
+      &nbsp;
+    
+      <div class="food">
+        <label class="required" for="food"> Choose your favorite food (select atleast 2)</label><span class="error" style="visibility:hidden; color:red; ">Less than two selected</span>
+    
+        <div>
+          <input type="checkbox" id="pizza" name="pizza">
+          <label for="pizza">pizza</label>
+        </div>
+    
+        <div>
+          <input type="checkbox" id="pasta" name="pasta">
+          <label for="pasta">pasta</label>
+        </div>
+        <div>
+          <input type="checkbox" id="noodles" name="noodles">
+          <label for="noodles">noodles</label>
+        </div>
+        <div>
+          <input type="checkbox" id="burger" name="burger">
+          <label for="burger">burger</label>
+        </div>
+        <div>
+          <input type="checkbox" id="sandwich" name="sandwich">
+          <label for="sandwich">sandwich</label>
+        </div>
+      </div>
+      &nbsp;
+    
+      <div class="state-country">
+        <label class="required" for="country"> Select Country</label>
+        <select id="countrySelect" size="1" onchange="makeSubmenu(this.value)" name="country" required>
+          <option value="" disabled selected>Choose country</option>
+          <option>India</option>
+          <option>USA</option>
+          <option>Australia</option>
+          <option>Not_listed</option>
+        </select>
+        <label class="required" for="state"> Select state</label>
+        <select id="citySelect" size="1" required>
+          <option value="" disabled selected>Choose state</option>
+          <option></option>
+        </select>
+    
+      </div>
+      <button class="button" type="reset">Reset</button>
+      <button class="button" type="button" onclick="updateUser()">
+        Submit
+      </button>
+    </form>
+    &nbsp;
+    <p class="tableHeading">Previous entries</p>
+    <table id="myTable" style:"visibility: hidden;">
+    
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Address</th>
+        <th>Pincode</th>
+        <th>Gender</th>
+        <th>Food preferences</th>
+        <th>State</th>
+        <th>Country</th>
+      </tr>
+    </table>
+</body>
+</html>
